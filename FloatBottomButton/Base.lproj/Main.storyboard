@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9527.1" systemVersion="15C31f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9525.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FloatBottomButton" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Wda-5k-e4L">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPg-79-407">
+                                <rect key="frame" x="160" y="315" width="55" height="37"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="toggle">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleFloatingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="31c-t1-vkP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Wda-5k-e4L" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="G1A-IX-GgZ"/>
+                            <constraint firstItem="Wda-5k-e4L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XK3-Uo-lyA"/>
+                            <constraint firstItem="Wda-5k-e4L" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="YXF-0p-sTe"/>
+                            <constraint firstItem="EPg-79-407" firstAttribute="centerY" secondItem="Wda-5k-e4L" secondAttribute="centerY" id="agA-Vg-qkb"/>
+                            <constraint firstItem="Wda-5k-e4L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="b3s-7s-gBg"/>
+                            <constraint firstItem="EPg-79-407" firstAttribute="centerX" secondItem="Wda-5k-e4L" secondAttribute="centerX" id="l7Q-j3-Ohf"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="V2i-Pv-zfk" appends="YES" id="Em6-aP-oof"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="panGesture" destination="V2i-Pv-zfk" id="Rmw-D3-ZiD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="V2i-Pv-zfk">
+                    <connections>
+                        <action selector="panned:" destination="BYZ-38-t0r" id="3V7-H3-eTv"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="640" height="1138"/>
+    </resources>
+</document>
